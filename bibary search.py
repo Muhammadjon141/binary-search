@@ -1,5 +1,3 @@
-
-
 def check_list():
     datas = input("Listga ma'lumotlar kiriting(son): ").split()
     dat = []
@@ -23,20 +21,21 @@ def binary_search(dat):
         search = int(input("Qidirayotgan sonni kiriting: "))
         low = 0
         data_last = len(dat)
-        midle = (data_last + low) // 2
         count = 0
         while True:
             count += 1
-            if dat[midle] > search:
-                data_last = midle
-            elif dat[midle] < search:
-                low = midle + 1
-            elif dat[midle] == search:
-                print(dat[midle], count)
+            middle = (data_last + low) // 2
+            if dat[middle] < search:
+                low = middle + 1
+            elif dat[middle] == search:
+                print(search)
+                print(f"Urunishalr soni {count}")
                 break
+            elif dat[middle] > search:
+                data_last = middle
             else:
                 print("Bunday element mavjud emas!")
-                return binary_search(dat)
+                return False
     except:
         print("Son kiriting! ")
         return binary_search(dat)
