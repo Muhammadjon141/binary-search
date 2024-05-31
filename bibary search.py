@@ -18,6 +18,7 @@ def check_list():
 
 
 def binary_search(dat):
+    dat.sort()
     try:
         search = int(input("Qidirayotgan sonni kiriting: "))
         low = 0
