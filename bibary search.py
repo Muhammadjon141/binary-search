@@ -29,7 +29,7 @@ def binary_search(dat):
             if dat[midle] > search:
                 data_last = midle
             elif dat[midle] < search:
-                low = midle
+                low = midle + 1
             elif dat[midle] == search:
                 print(dat[midle], count)
                 break
